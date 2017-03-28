@@ -114,7 +114,7 @@ public class EntityMapping {
 	public EntityMapping(CoordVNF_SVNF_Algorithm SVNF, VNFFG VNFFG, SubstrateNetwork sNet, List<SubstrateLink> substrate, List<AbstractDemand> virtual, boolean mapBidirectionalPaths) {
 		this.SVNF = SVNF;
 		this.VNFFG = VNFFG;
-		this.substrateEntities = Collections.unmodifiableCollection(substrate);
+		this.substrateEntities = new LinkedList<NetworkEntity<AbstractResource>>(substrate);
 		this.virtual = virtual;
 		this.mappedResources = new LinkedList<ResourceDemandEntry>();
 		
@@ -127,7 +127,7 @@ public class EntityMapping {
 		
 		this.SVNF = SVNF;
 		this.VNFFG = VNFFG;
-		this.substrateEntities = Collections.unmodifiableCollection(substrate);
+		this.substrateEntities = new LinkedList<NetworkEntity<AbstractResource>>(substrate);
 		this.virtual = virtual;
 		this.mappedResources = new LinkedList<ResourceDemandEntry>();
 		
